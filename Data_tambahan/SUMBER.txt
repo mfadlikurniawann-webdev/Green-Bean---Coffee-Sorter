@@ -1,0 +1,19 @@
+Sumber data di folder ini
+=========================
+
+Good/          300 foto, dari kelas "premium" (train) USK-Coffee
+Other Defect/  300 foto, dari kelas "defect" (train) USK-Coffee
+
+Semua foto sudah diseragamkan dengan import_good_beans.py (white balance, ukuran biji
+di bingkai, 500x500 px), jadi tidak identik dengan file aslinya.
+
+Dataset : USK-COFFEE (Computer Vision Research Group, Universitas Syiah Kuala)
+Diunduh : salinan Hugging Face duvdar/usk-coffee (8.000 foto, 256x256 px)
+Salinan : sumber_data/USK-Coffee/ (asli, belum diseragamkan)
+Situs   : https://comvis.unsyiah.ac.id/usk-coffee/
+Sitasi  : A. Febriana, K. Muchtar, R. Dawood, C.-Y. Lin, "USK-COFFEE Dataset: A Multi-Class
+          Green Arabica Coffee Bean Dataset for Deep Learning", IEEE CyberneticsCom 2022.
+          doi:10.1109/CyberneticsCom55287.2022.9865489
+Lisensi : CC BY-NC-SA 4.0 menurut salinan Roboflow (belum dikonfirmasi di situs resmi).
+          NON-KOMERSIAL. Untuk produk komersial, ganti dengan foto biji milik sendiri
+          atau minta izin ke pemilik dataset.

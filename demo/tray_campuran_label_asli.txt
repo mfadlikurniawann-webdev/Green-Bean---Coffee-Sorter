@@ -1,0 +1,20 @@
+1. Full Sour
+2. Good
+3. Dry Cherry
+4. Other Defect
+5. Good
+6. Good
+7. Dry Cherry
+8. Partial Black
+9. Good
+10. Immature
+11. Other Defect
+12. Severe Insect Damage
+13. Good
+14. Floater
+15. Cut
+16. Good
+17. Withered
+18. Good
+19. Good
+20. Severe Insect Damage

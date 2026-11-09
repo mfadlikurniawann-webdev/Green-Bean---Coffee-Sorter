@@ -1,0 +1,90 @@
+Model : D:\Arga - New\Developer-Project\AI-DetectionDefect\models\coffee_defect_cls.pt
+Data  : test (234 gambar)
+
+Akurasi kelas (top-1)  : 86.3%
+Akurasi kelas (top-3)  : 95.7%
+Akurasi bin sortir     : 93.2%
+Defect kategori 1 masuk KATEGORI_1: 82.2% (37/45)
+
+Keputusan sortir (threshold 0.5, batas LOLOS 0.9):
+  Defect yang LOLOS sebagai biji bagus : 2/189 (1.1%)  <- kesalahan paling mahal
+    termasuk defect kategori 1         : 1/45
+  Biji bagus masuk bin LOLOS           : 41/45
+  Biji bagus ikut ditolak (salah tolak): 2/45
+  Biji bagus ke CEK_MANUAL             : 2/45
+
+                      precision    recall  f1-score   support
+
+              Broken      1.000     0.778     0.875         9
+                 Cut      0.857     0.600     0.706        10
+          Dry Cherry      0.889     1.000     0.941         8
+                Fade      0.667     0.800     0.727         5
+             Floater      0.875     1.000     0.933         7
+          Full Black      1.000     1.000     1.000         6
+           Full Sour      0.778     0.636     0.700        11
+       Fungus Damage      0.818     0.818     0.818        11
+                Good      0.956     0.956     0.956        45
+                Husk      0.800     1.000     0.889         8
+            Immature      0.818     0.900     0.857        10
+        Other Defect      0.956     0.956     0.956        45
+           Parchment      0.889     1.000     0.941         8
+       Partial Black      1.000     0.800     0.889        10
+        Partial Sour      0.571     0.571     0.571         7
+Severe Insect Damage      0.857     0.667     0.750         9
+               Shell      1.000     0.778     0.875         9
+Slight Insect Damage      0.583     0.875     0.700         8
+            Withered      0.500     0.625     0.556         8
+
+            accuracy                          0.863       234
+           macro avg      0.832     0.829     0.823       234
+        weighted avg      0.875     0.863     0.864       234
+
+Tabel threshold (prediksi di bawah threshold -> CEK_MANUAL):
+  threshold  cek manual  akurasi kelas*  akurasi bin*  defect lolos
+        0.3        0.0%           86.3%         93.2%             2
+        0.4        0.0%           86.3%         93.2%             2
+        0.5        0.9%           86.6%         93.5%             2
+        0.6        4.7%           88.8%         94.6%             2
+        0.7        8.1%           90.2%         95.8%             2
+        0.8       13.2%           91.6%         96.6%             2
+        0.9       18.8%           93.2%         97.4%             2
+  * dihitung hanya pada biji yang tidak masuk CEK_MANUAL
+
+Tes jebakan (AI harus menilai biji, bukan gaya/asal foto; batas LOLOS 0.9):
+  B. Defect test diberi gaya sumber luar, dikira Good : 1/189 (0.5%)  [harus rendah]
+  A. Defect sumber luar, dikira Good : 35/400 (8.8%)  [harus rendah]
+  C. Biji bagus sumber luar (di luar training) dikenali Good : 365/400 (91.2%)  [harus tinggi]
+
+Gambar yang salah tebak (file | label asli -> tebakan, confidence):
+  Broken_20.jpg | Broken -> Floater (1.00)
+  Broken_61.jpg | Broken -> Withered (0.92)
+  Cut_56.jpg | Cut -> Withered (0.71)
+  Cut_58.jpg | Cut -> Withered (0.54)
+  Cut_60.jpg | Cut -> Slight Insect Damage (1.00)
+  Cut_65.jpg | Cut -> Fade (0.86)
+  Fade_10.jpg | Fade -> Full Sour (0.42)
+  Full Sour_01.jpg | Full Sour -> Partial Sour (0.57)
+  Full Sour_60.jpg | Full Sour -> Dry Cherry (0.79)
+  Full Sour_68.jpg | Full Sour -> Husk (0.98)
+  Full Sour_70.jpg | Full Sour -> Partial Sour (0.86)
+  Fungus Damage_01.jpg | Fungus Damage -> Good (0.93)
+  Fungus Damage_66.jpg | Fungus Damage -> Husk (0.70)
+  Good_654.jpg | Good -> Other Defect (0.58)
+  Good_839.jpg | Good -> Other Defect (0.69)
+  Immature_32.jpg | Immature -> Withered (0.91)
+  Other Defect_1195.jpg | Other Defect -> Fungus Damage (0.53)
+  Other Defect_1270.jpg | Other Defect -> Good (1.00)
+  Partial Black_06.jpg | Partial Black -> Cut (0.96)
+  Partial Black_21.jpg | Partial Black -> Partial Sour (0.54)
+  Partial Sour_13.jpg | Partial Sour -> Fade (0.88)
+  Partial Sour_42.jpg | Partial Sour -> Severe Insect Damage (0.97)
+  Partial Sour_48.jpg | Partial Sour -> Full Sour (0.67)
+  Severe Insect Damange_23.jpg | Severe Insect Damage -> Slight Insect Damage (1.00)
+  Severe Insect Damange_49.jpg | Severe Insect Damage -> Slight Insect Damage (0.81)
+  Severe Insect Damange_52.jpg | Severe Insect Damage -> Slight Insect Damage (0.73)
+  Shell_29.jpg | Shell -> Withered (0.95)
+  Shell_48.jpg | Shell -> Slight Insect Damage (0.60)
+  Slight Insect Damage_24.jpg | Slight Insect Damage -> Immature (0.94)
+  Withered_09.jpg | Withered -> Parchment (0.50)
+  Withered_26.jpg | Withered -> Fungus Damage (0.70)
+  Withered_38.jpg | Withered -> Immature (0.90)

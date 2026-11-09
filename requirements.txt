@@ -1,0 +1,10 @@
+# 1) Install PyTorch versi GPU (NVIDIA) lebih dulu, sesuaikan versi CUDA driver:
+#      pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+#    Tanpa GPU: pip install torch torchvision
+# 2) Lalu: pip install -r requirements.txt
+ultralytics>=8.4
+scikit-learn
+opencv-python
+numpy
+pillow
+gradio          # aplikasi web lokal (app.py)

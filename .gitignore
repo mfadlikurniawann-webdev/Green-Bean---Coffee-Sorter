@@ -1,0 +1,21 @@
+# Lingkungan Python
+.venv/
+__pycache__/
+*.pyc
+
+# Dataset pihak ketiga (lisensi terbatas, tidak diunggah ulang). Cara mengunduh: lihat README.
+Data/
+Data_tambahan/*/
+sumber_data/
+
+# Hasil generate (bisa dibuat ulang dengan script)
+dataset/
+runs/
+output/
+reports/confusion_matrix_*/
+*.log
+*.cache
+
+# Bobot pretrained Ultralytics (diunduh otomatis saat training)
+yolo11*-cls.pt
+yolo26*-cls.pt
